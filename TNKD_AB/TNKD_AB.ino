@@ -1,11 +1,11 @@
 /*
-  GAME NAME: http://www.team-arg.org/dummy-manual.html
+  TANKED: http://www.team-arg.org/tnkd-manual.html
 
-  Arduboy version 0.1:  http://www.team-arg.org/dummy-downloads.html
+  Arduboy version 0.1:  http://www.team-arg.org/tnkd-downloads.html
 
   MADE by TEAM a.r.g. : http://www.team-arg.org/more-about.html
 
-  2016 - JO3RI
+  2016 - Trodoss
 
   License: MIT : https://opensource.org/licenses/MIT
 

@@ -4,6 +4,7 @@
 #include <Arduino.h>
 #include "globals.h"
 #include "player.h"
+#include "bullet.h"
 #include "levels.h"
 
 char check_move(char x, char y)
@@ -105,14 +106,14 @@ void checkInputs()
     if (player.direction > DIR_SW) player.direction = DIR_W;
   }
 
-//  if (arduboy.pressed(B_BUTTON)) {
-//    if (!bullet_1_active) {
-//      bullet_1_active = true;
-//      bullet_1_x = player_1_x;
-//      bullet_1_y = player_1_y;
-//      bullet_1_dir = player_1_dir;
-//    }
-//  }
+  if (arduboy.pressed(B_BUTTON)) {
+    if (!bullet.isActive) {
+      bullet.isActive = true;
+      bullet.x = player.x;
+      bullet.y = player.y;
+      bullet.direction = player.direction;
+    }
+  }
 
   if (arduboy.pressed(UP_BUTTON)) {
     if (check_movement(player.direction, player.x, player.y, out_x, out_y)) {

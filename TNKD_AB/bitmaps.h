@@ -347,7 +347,7 @@ PROGMEM const unsigned char tank_2[] = {
 0b00000000,
 };
 
-PROGMEM const unsigned char bullet[] = {
+PROGMEM const unsigned char bullet_bitmap[] = {
 8,8,
 0b00000000,
 0b00000000,

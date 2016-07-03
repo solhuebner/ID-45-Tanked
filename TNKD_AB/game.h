@@ -5,6 +5,7 @@
 #include "globals.h"
 #include "inputs.h"
 #include "player.h"
+#include "bullet.h"
 #include "enemies.h"
 #include "elements.h"
 #include "levels.h"
@@ -26,7 +27,18 @@ void stateGameNextLevel()
 void stateGamePlaying()
 {
   checkInputs();
+
+  if (bullet.isActive) {
+    if (check_movement(bullet.direction, bullet.x, bullet.y, out_x, out_y)) {
+        bullet.x = out_x;
+        bullet.y = out_y;
+    }  else {
+        bullet.isActive = false; 
+    }
+  }
+  
   drawPlayer();
+  if (bullet.isActive) drawBullet();
   drawBackdrop();
 };
 

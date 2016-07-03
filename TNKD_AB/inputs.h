@@ -111,6 +111,7 @@ void checkInputs()
       bullet.isActive = true;
       bullet.x = player.x;
       bullet.y = player.y;
+      bullet.bounce = 0;
       bullet.direction = player.direction;
     }
   }

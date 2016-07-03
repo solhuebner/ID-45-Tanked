@@ -3,6 +3,7 @@
 
 #include <Arduino.h>
 #include "globals.h"
+#include "inputs.h"
 
 struct Bullet
 {
@@ -10,10 +11,11 @@ struct Bullet
     int x;
     int y;
     byte direction;
+    byte bounce;
   	bool isActive;	
 };
 
-Bullet bullet = { .x = 16, .y = 16, .direction = DIR_E, .isActive = false};
+Bullet bullet = { .x = 16, .y = 16, .direction = DIR_E, .bounce = 0, .isActive = false};
 
 void drawBullet()
 {

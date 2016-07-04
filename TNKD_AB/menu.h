@@ -14,9 +14,10 @@ void stateMenuIntro()
 
 void stateMenuMain()
 {
+   sprites.drawSelfMasked(0, 16, titleScreen, 0);
   for (byte i = 0; i < 4; i++)
   {
-    sprites.drawSelfMasked(i*32,0, titleScreen, i);
+    //sprites.drawSelfMasked(i*32,0, titleScreen, i);
     {
       if (((2 + i) - menuSelection) != 0)
       {

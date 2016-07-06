@@ -103,7 +103,7 @@ class Arglib
    {
    }
    
-   void update()
+   void display()
    {
      background(0);
      stroke(255);
@@ -121,7 +121,7 @@ class Arglib
      }      
    }
    
-   void clearScreen()
+   void clearDisplay()
    {
      screen_buffer = new char[screen_width][screen_height];
    }  
@@ -211,12 +211,12 @@ line: The vertical 8 pixel 'page' (0 to 7) (byte)
      }
    }
    
-   void drawSprite(int x, int y, char[] sprite)
+   void drawSelfMasked(int x, int y, char[] sprite)
    {
-     drawSprite (x, y, sprite, 0);
+     drawSelfMasked (x, y, sprite, 0);
    }
    
-   void drawSprite(int x, int y, char[] sprite,int frame)
+   void drawSelfMasked(int x, int y, char[] sprite,int frame)
    {
      int ptr = 0;
      int w = sprite[ptr];

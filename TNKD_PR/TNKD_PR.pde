@@ -14,8 +14,8 @@ void setup() {
 
 void show_logo()
 {
-  arglib.drawSprite(2,16,bitmaps.tank1_bitmap, 0);
-  arglib.update();
+  drawPlayer();
+  arglib.display();
 }
 
 void keyReleased()

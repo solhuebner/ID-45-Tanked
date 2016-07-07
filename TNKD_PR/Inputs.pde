@@ -97,15 +97,15 @@ void checkInputs()
     if (player.direction > DIR_SW) player.direction = DIR_W;
   }
 
-//  if (arglib.pressed(B_BUTTON)) {
-//    if (!bullet.isActive) {
-//      bullet.isActive = true;
-//      bullet.x = player.x;
-//      bullet.y = player.y;
-//      bullet.bounce = 0;
-//      bullet.direction = player.direction;
-//    }
-//  }
+  if (arglib.pressed(B_BUTTON)) {
+    if (!bullet.isActive) {
+      bullet.isActive = true;
+      bullet.x = player.x;
+      bullet.y = player.y;
+      bullet.bounce = 0;
+      bullet.direction = player.direction;
+    }
+  }
 
   if (arglib.pressed(UP_BUTTON)) {
     if (check_movement(player.direction, player.x, player.y)) {

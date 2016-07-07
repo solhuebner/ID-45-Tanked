@@ -16,9 +16,9 @@ void stateGameNextLevel()
 void stateGamePlaying()
 {
   checkInputs();
-/*
+
   if (bullet.isActive) {
-    if (check_movement(bullet.direction, bullet.x, bullet.y, out_x, out_y)) {
+    if (check_movement(bullet.direction, bullet.x, bullet.y)) {
         bullet.x = out_x;
         bullet.y = out_y;
     }  else {
@@ -59,10 +59,10 @@ void stateGamePlaying()
         }
     }
   }
-  */
+
   arglib.clearDisplay();
+  if (bullet.isActive) drawBullet();
   drawPlayer();
-//  if (bullet.isActive) drawBullet();
   drawBackdrop();
   arglib.display();
 };

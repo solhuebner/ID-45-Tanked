@@ -247,7 +247,7 @@ line: The vertical 8 pixel 'page' (0 to 7) (byte)
             this_bit=0;
           }
           draw_bit = (this_byte << this_bit) & 128;
-          drawPixel(x+i,y+j,draw_bit);
+          if (draw_bit > 0) drawPixel(x+i,y+j,draw_bit);
           this_bit++;
         }
       }     

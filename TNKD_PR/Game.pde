@@ -61,8 +61,8 @@ void stateGamePlaying()
   }
 
   arglib.clearDisplay();
-  if (bullet.isActive) drawBullet();
   drawPlayer();
+  if (bullet.isActive) drawBullet();
   drawBackdrop();
   arglib.display();
 };

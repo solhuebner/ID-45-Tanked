@@ -2,9 +2,9 @@ class Player
 {
     public int x;
     public int y;
-    public byte direction;
+    public int direction;
     
-    public Player(int _x, int _y, byte _dir) {
+    public Player(int _x, int _y, int _dir) {
       this.x = _x;
       this.y = _y;
       this.direction = _dir;

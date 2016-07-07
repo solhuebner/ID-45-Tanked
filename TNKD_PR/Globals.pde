@@ -46,7 +46,7 @@ final byte DIR_SW = 7;
 byte gameState = STATE_MENU_INTRO;   // start the game with the TEAM a.r.g. logo
 byte menuSelection = STATE_MENU_PLAY; // PLAY menu item is pre-selected
 
-byte out_x, out_y, inv_dir;
+int out_x, out_y, inv_dir;
 
 final char backdrop[] = {
   0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,

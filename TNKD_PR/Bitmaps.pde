@@ -147,4 +147,18 @@ final char[] bullet_bitmap = {
 (char)Integer.parseInt("00000000", 2),
 
 };
+
+final char wall_bitmap[] = {
+
+8,8,
+(char)Integer.parseInt("01111110", 2),
+(char)Integer.parseInt("10000001", 2),
+(char)Integer.parseInt("10111101", 2),
+(char)Integer.parseInt("10111001", 2),
+(char)Integer.parseInt("10110001", 2),
+(char)Integer.parseInt("10100101", 2),
+(char)Integer.parseInt("10000001", 2),
+(char)Integer.parseInt("01111110", 2),
+
+};
 }

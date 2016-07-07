@@ -1,18 +1,11 @@
 // Inputs
-final int DPAD_UP  = Integer.parseInt("10000000",2);
-final int DPAD_LEFT   = Integer.parseInt("01000000",2);
-final int DPAD_RIGHT  = Integer.parseInt("00100000",2);
-final int DPAD_DOWN   = Integer.parseInt("00010000",2);
-final int DPAD_UP_LEFT  =          DPAD_UP | DPAD_LEFT;
-final int DPAD_UP_RIGHT  =         DPAD_UP | DPAD_RIGHT;
-final int DPAD_DOWN_LEFT  =        DPAD_DOWN | DPAD_LEFT;
-final int DPAD_DOWN_RIGHT  =       DPAD_DOWN | DPAD_RIGHT;
-final int DPAD_ANY    = Integer.parseInt("11110000",2);
-final int BUTTON_1    = Integer.parseInt("00001000",2);
-final int BUTTON_2    = Integer.parseInt("00000100",2);
-final int BUTTON_3    = Integer.parseInt("00000010",2);
-final int BUTTON_4    = Integer.parseInt("00000001",2);
-final int BUTTON_ANY  = Integer.parseInt("00001111",2);  
+final int UP_BUTTON  = 0;
+final int LEFT_BUTTON   = 1;
+final int RIGHT_BUTTON  = 2;
+final int DOWN_BUTTON   = 3;
+final int A_BUTTON    = 4;
+final int B_BUTTON    = 5;
+  
 
 final int PATTERN_WHITE = 1;
 final int PATTERN_BLACK = 0;
@@ -28,7 +21,8 @@ class Arglib
    int current_x = 0;
    int current_y = 0;
    
-   int inputs = 0;
+   boolean[] buttons = new boolean[6];
+   
    char drawPattern = 0;
    
    //embedding font, for convenience
@@ -103,6 +97,11 @@ class Arglib
    {
    }
    
+   
+   boolean pressed (int button)
+   {
+     return buttons[button];
+   }
    void display()
    {
      background(0);

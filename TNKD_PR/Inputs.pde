@@ -178,3 +178,9 @@ void keyPressed()
   if (key == '.') arglib.buttons[B_BUTTON] = true;
 
 }
+
+void clearInput() {
+  for (int i=0; i< 6; i++) {
+    arglib.buttons[i] = false;
+  }
+}

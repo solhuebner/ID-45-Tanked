@@ -12,6 +12,8 @@ final int STATE_GAME_PLAYING    =       7;
 final int STATE_GAME_PAUSE      =       8;
 final int STATE_GAME_OVER       =       9;
 
+final int STATE_GAME_WAITING    =       10;
+
 final int GAME_TOP              =       0;
 final int GAME_BOTTOM           =       48;
 final int GAME_LEFT             =       0;
@@ -42,9 +44,14 @@ final byte DIR_SE = 5;
 final byte DIR_S  = 6;
 final byte DIR_SW = 7;
 
-
+int globalCounter = 0;
 byte gameState = STATE_MENU_INTRO;   // start the game with the TEAM a.r.g. logo
+byte lastGameState = gameState;
 byte menuSelection = STATE_MENU_PLAY; // PLAY menu item is pre-selected
+boolean gameReadyToStart = false;
+
+String portName = "";
+byte portSelection = 0;
 
 int out_x, out_y, inv_dir;
 

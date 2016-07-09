@@ -130,12 +130,12 @@ class Arglib
 col: The column (0 to 95) (byte)
 line: The vertical 8 pixel 'page' (0 to 7) (byte)
   */
-   void setPos(int y, int x)
+   void setPos(int x, int y)
    {
-     current_x = (x * 8);
-     if (current_x > 63) current_x = 63;
+     current_x = x;
+     if (current_x > 127) current_x =127;
      current_y = y;
-     if (current_y > 127) current_y = 127;
+     if (current_y > 63) current_y = 63;
    } 
    
 

@@ -23,6 +23,7 @@
 #include "elements.h"
 #include "enemies.h"
 #include "levels.h"
+#include "serial.h"
 
 typedef void (*FunctionPointer) ();
 

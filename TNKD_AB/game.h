@@ -9,11 +9,14 @@
 #include "enemies.h"
 #include "elements.h"
 #include "levels.h"
+#include "serial.h"
 
 void stateMenuPlay()
 //void stateGamePrepareLevel()
 {
   gameState = STATE_GAME_NEXT_LEVEL;
+  serialStart();
+  serialSendReady();
 };
 
 
@@ -26,6 +29,7 @@ void stateGameNextLevel()
 
 void stateGamePlaying()
 {
+  serialRead();
   checkInputs();
 
   if (bullet.isActive) {

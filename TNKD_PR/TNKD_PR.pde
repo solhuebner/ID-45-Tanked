@@ -55,6 +55,12 @@ void serialEvent(Serial myPort) {
        case 0:
          gameReadyToStart = true;
          break;
+         
+       case 1:
+         byte x = dataIn[1];
+         byte y = dataIn[2];
+         byte dir = dataIn[3];
+         println("x = " + x + " y = " + y + " dir = " + dir);
      }
   }
 }

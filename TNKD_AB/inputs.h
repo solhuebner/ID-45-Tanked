@@ -6,6 +6,7 @@
 #include "player.h"
 #include "bullet.h"
 #include "levels.h"
+#include "serial.h"
 
 char check_move(char x, char y)
 {
@@ -93,17 +94,20 @@ char check_movement(char dir, char x, char y, char &out_x, char &out_y) {
 
 void checkInputs()
 {
+  bool moved = false;
   if (arduboy.pressed(LEFT_BUTTON)) {
     if (player.direction == DIR_W) {
       player.direction = DIR_SW;
     } else {
       player.direction--;
     }
+    moved = true;
   }
 
   if (arduboy.pressed(RIGHT_BUTTON)) {
     player.direction++;
     if (player.direction > DIR_SW) player.direction = DIR_W;
+    moved = true;
   }
 
   if (arduboy.pressed(B_BUTTON)) {
@@ -120,6 +124,7 @@ void checkInputs()
     if (check_movement(player.direction, player.x, player.y, out_x, out_y)) {
         player.x = out_x;
         player.y = out_y;
+        moved = true;
      }
   }
 
@@ -128,9 +133,11 @@ void checkInputs()
      if (check_movement(inv_dir, player.x, player.y, out_x, out_y)) {
         player.x = out_x;
         player.y = out_y;
+        moved = true;
      }
   }
 
+  if (moved) serialSendMove((char)player.x, (char)player.y, player.direction);
   if (arduboy.justPressed(A_BUTTON)) gameState = STATE_GAME_PAUSE;
   //if (arduboy.justPressed(B_BUTTON)) arduboy.audio.tone(880, 20);
 }

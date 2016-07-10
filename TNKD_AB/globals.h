@@ -61,6 +61,9 @@ byte menuSelection = STATE_MENU_PLAY; // PLAY menu item is pre-selected
 byte globalCounter = 0;
 byte level = FIRST_LEVEL;
 
+byte serialPtr = 0;
+byte serialBuffer[6];
+
 char out_x, out_y, inv_dir;
 
 PROGMEM const unsigned char backdrop[] = {

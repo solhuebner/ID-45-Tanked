@@ -12,7 +12,7 @@ struct Player
     byte direction;
 };
 
-Player player = { .x = 16, .y = 16, .direction = DIR_E};
+Player player = { .x = 112, .y = 32, .direction = DIR_W};
 
 void drawPlayer()
 {

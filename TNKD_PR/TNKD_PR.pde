@@ -12,6 +12,8 @@ void setup() {
   size(640, 320,FX2D);
   frameRate(30);
   noStroke();
+  bullets[BULLET_PR] = new Bullet();
+  bullets[BULLET_AB] = new Bullet();
 }
 
 void draw() {
@@ -49,6 +51,9 @@ void draw() {
 }
 
 void serialEvent(Serial myPort) {
+  byte x = 0;
+  byte y = 0;
+  byte dir = 0;
   if (myPort != null) {
      byte[] dataIn = myPort.readBytes();
      switch (dataIn[0]) {
@@ -57,10 +62,26 @@ void serialEvent(Serial myPort) {
          break;
          
        case 1:
-         byte x = dataIn[1];
-         byte y = dataIn[2];
-         byte dir = dataIn[3];
-         println("x = " + x + " y = " + y + " dir = " + dir);
+         x = dataIn[1];
+         y = dataIn[2];
+         dir = dataIn[3];
+         playerAB.x = x;
+         playerAB.y = y;
+         playerAB.direction = dir;
+         break;
+         
+       case 2:
+         x = dataIn[1];
+         y = dataIn[2];
+         dir = dataIn[3];
+         bullets[BULLET_AB].x = x;
+         bullets[BULLET_AB].y = y;
+         bullets[BULLET_AB].direction = dir; 
+         bullets[BULLET_AB].isActive = true;
+         bullets[BULLET_AB].bounce = 0;
+         println(" x = " + x + " y = " + y + " dir = " + dir);
+         break;
+         
      }
   }
 }

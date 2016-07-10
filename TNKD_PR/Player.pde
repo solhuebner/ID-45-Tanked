@@ -11,9 +11,11 @@ class Player
     }
 };
 
-Player player = new Player(16, 16, DIR_E);
+Player playerPR = new Player(8, 32, DIR_E);
+Player playerAB = new Player(112, 32, DIR_W);
 
 void drawPlayer()
 {
-  arglib.drawSelfMasked(player.x, player.y, bitmaps.tank2_bitmap,  player.direction);
+  arglib.drawSelfMasked(playerPR.x, playerPR.y, bitmaps.tank1_bitmap,  playerPR.direction);
+  arglib.drawSelfMasked(playerAB.x, playerAB.y, bitmaps.tank2_bitmap,  playerAB.direction);
 }

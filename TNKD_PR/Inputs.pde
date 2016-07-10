@@ -85,40 +85,40 @@ boolean check_movement(int dir, int x, int y) {
 void checkInputs()
 {
   if (arglib.pressed(LEFT_BUTTON)) {
-    if (player.direction == DIR_W) {
-      player.direction = DIR_SW;
+    if (playerPR.direction == DIR_W) {
+      playerPR.direction = DIR_SW;
     } else {
-      player.direction--;
+      playerPR.direction--;
     }
   }
 
   if (arglib.pressed(RIGHT_BUTTON)) {
-    player.direction++;
-    if (player.direction > DIR_SW) player.direction = DIR_W;
+    playerPR.direction++;
+    if (playerPR.direction > DIR_SW) playerPR.direction = DIR_W;
   }
 
   if (arglib.pressed(B_BUTTON)) {
-    if (!bullet.isActive) {
-      bullet.isActive = true;
-      bullet.x = player.x;
-      bullet.y = player.y;
-      bullet.bounce = 0;
-      bullet.direction = player.direction;
+    if (!bullets[BULLET_PR].isActive) {
+      bullets[BULLET_PR].isActive = true;
+      bullets[BULLET_PR].x = playerPR.x;
+      bullets[BULLET_PR].y = playerPR.y;
+      bullets[BULLET_PR].bounce = 0;
+      bullets[BULLET_PR].direction = playerPR.direction;
     }
   }
 
   if (arglib.pressed(UP_BUTTON)) {
-    if (check_movement(player.direction, player.x, player.y)) {
-        player.x = out_x;
-        player.y = out_y;
+    if (check_movement(playerPR.direction, playerPR.x, playerPR.y)) {
+        playerPR.x = out_x;
+        playerPR.y = out_y;
      }
   }
 
   if (arglib.pressed(DOWN_BUTTON)) {
-    inv_dir = (player.direction + 4) % 8;
-     if (check_movement(inv_dir, player.x, player.y)) {
-        player.x = out_x;
-        player.y = out_y;
+    inv_dir = (playerPR.direction + 4) % 8;
+     if (check_movement(inv_dir, playerPR.x, playerPR.y)) {
+        playerPR.x = out_x;
+        playerPR.y = out_y;
      }
   }
 

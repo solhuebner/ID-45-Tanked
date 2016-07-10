@@ -16,51 +16,53 @@ void stateGameNextLevel()
 void stateGamePlaying()
 {
 
-  if (bullet.isActive) {
-    if (check_movement(bullet.direction, bullet.x, bullet.y)) {
-        bullet.x = out_x;
-        bullet.y = out_y;
+  for (int i=0; i < 2; i++) {
+  if (bullets[i].isActive) {
+    if (check_movement(bullets[i].direction, bullets[i].x, bullets[i].y)) {
+        bullets[i].x = out_x;
+        bullets[i].y = out_y;
     }  else {
-        bullet.bounce++;
-        if (bullet.bounce > 3) bullet.isActive = false;
-        switch (bullet.direction) {
+        bullets[i].bounce++;
+        if (bullets[i].bounce > 3) bullets[i].isActive = false;
+        switch (bullets[i].direction) {
           case DIR_W:
-             bullet.direction = DIR_E;
+             bullets[i].direction = DIR_E;
              break;
              
           case DIR_NW:
-             bullet.direction = DIR_SW;
+             bullets[i].direction = DIR_SW;
              break;
 
           case DIR_N:
-             bullet.direction = DIR_S;
+             bullets[i].direction = DIR_S;
              break;
 
           case DIR_NE:
-             bullet.direction = DIR_SE;
+             bullets[i].direction = DIR_SE;
              break;
 
           case DIR_E:
-             bullet.direction = DIR_W;
+             bullets[i].direction = DIR_W;
              break;
 
           case DIR_SE:
-             bullet.direction = DIR_NE;
+             bullets[i].direction = DIR_NE;
              break;
 
           case DIR_S:
-             bullet.direction = DIR_N;
+             bullets[i].direction = DIR_N;
              break;
 
           case DIR_SW:
-             bullet.direction = DIR_NW;
+             bullets[i].direction = DIR_NW;
              break; 
         }
     }
+   }
   }
 
   drawPlayer();
-  if (bullet.isActive) drawBullet();
+  drawBullet();
   drawBackdrop();
 };
 
